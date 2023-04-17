@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <input/>
+    <button>Encriptar mensaje</button>
     <script>
         var claves = ["ai", "enter", "imes", "ober", "ufat"];
         var letras = ["a", "e", "i", "o", "u"];
@@ -55,14 +57,20 @@
             document.write(fraseEncriptada.join(""));
         }
 
+        function empezarEncriptar(){
+            encriptar(frase.value);
+        }
+        function empezarDecencriptar(){
+            desencriptar(frase.value);
+        }
 
 
 
-        var frase = "hola amigo";
-        //encriptar(frase);
+        var frase = document.querySelector("input");
+        var button = document.querySelector("button");
+        button.onclick=empezarEncriptar;
 
-        var encriptadita = "hoberlai aimimesgober";
-        desencriptar(encriptadita);
+        
     </script>
 </body>
 
