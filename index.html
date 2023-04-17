@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          var claves=["ai","enter","imes","ober","ufat"];
+    var letras=["a","e","i","o","u"];
+        function buscador(letra,desencriptando){
+            var desencriptando=false;
+            var encontrada=false;
+            for(var i=0;i<letras.length;i++){
+                if(letra==letras[i]){
+                    //document.write("la clave es "+ claves[i])
+                    return(claves[i]);
+                    encontrada=true;
+                }       
+            }
+            if(encontrada==false){
+                    //document.write("la clave no existe");
+                    return(letra);
+                }
+            }
+
+        function encriptar(frase){
+            var fraseEncriptada=[];
+            for(var i=0;i<frase.length;i++){
+
+               fraseEncriptada.push(buscador(frase[i]));
+               
+            }
+
+            document.write(fraseEncriptada.join(""));
+        }
+
+        function desencriptar(frase){
+            var fraseEncriptada=[];
+            var claveTamano;
+            var i=0;
+         
+
+            while(i<frase.length){
+                fraseEncriptada.push(frase[i]);
+                claveTamano=buscador(frase[i]);
+                i+=claveTamano.length;
+                console.log(i)
+            }
+            document.write(fraseEncriptada.join(""));
+        }
+
+        
+        
+
+      var frase="hola amigo";
+      //encriptar(frase);
+      
+      var encriptadita="hoberlai aimimesgober";
+      desencriptar(encriptadita);
+        
+
+    </script>
+</body>
+</html>
