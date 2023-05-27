@@ -6,72 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <input/>
-    <button>Encriptar mensaje</button>
-    <script>
-        var claves = ["ai", "enter", "imes", "ober", "ufat"];
-        var letras = ["a", "e", "i", "o", "u"];
+<header>
+    <img class="logo" src="logo.png" alt="">
+</header>
+<main>
+    <section class="menu-texto">
+        <div>
+            <textarea class="text-area" cols="30" rows="3" placeholder="ingrese el texto"></textarea>
+            <div>
+                <h6>Solo letras minúsculas y sin acentos</h6>
+            </div>
+        </div>
+        <div class="botones">
 
-        function buscador(letra, desencriptando) {
-            var desencriptando = false;
-            var encontrada = false;
-            for (var i = 0; i < letras.length; i++) {
-                if (letra == letras[i]) {
-                    //document.write("la clave es "+ claves[i])
-                    return (claves[i]);
-                    encontrada = true;
-                }
-            }
-            if (encontrada == false) {
-                //document.write("la clave no existe");
-                return (letra);
-            }
-        }
+            <button class="boton-encriptar">Encriptar</button>
+            <button class="boton-desencriptar">Desencriptar</button>
+        </div>
+    </section>
 
-        function encriptar(frase) {
-            var fraseEncriptada = [];
-            for (var i = 0; i < frase.length; i++) {
+    <section class="seccion-resultado">
+        <div class="resultado" >
+            <textarea class="text-encriptado" cols="30" rows="10"></textarea>
 
-                fraseEncriptada.push(buscador(frase[i]));
-
-            }
-
-            document.write(fraseEncriptada.join(""));
-        }
-
-        function desencriptar(frase) {
-            var fraseEncriptada = [];
-            var claveTamano;
-            var i = 0;
-
-
-            while (i < frase.length) {
-                fraseEncriptada.push(frase[i]);
-                claveTamano = buscador(frase[i]);
-                i += claveTamano.length;
-                console.log(i)
-            }
-            document.write(fraseEncriptada.join(""));
-        }
-
-        function empezarEncriptar(){
-            encriptar(frase.value);
-        }
-        function empezarDecencriptar(){
-            desencriptar(frase.value);
-        }
+                <button class="boton-copiar" >Copiar</button>
 
 
 
-        var frase = document.querySelector("input");
-        var button = document.querySelector("button");
-        button.onclick=empezarEncriptar;
+        </div>
 
-        
-    </script>
+
+    </section>
+
+</main>
+
+<script src="code.js"></script>
 </body>
 
 </html>
